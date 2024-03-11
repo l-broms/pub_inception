@@ -5,13 +5,13 @@ all:
 	@if [ ! -d "/home/lbroms/data/html" ]; then \
 		sudo mkdir -p /home/lbroms/data/html; \
 	fi
-	sudo docker-compose -f ./srcs/docker-compose.yml up -d
+	sudo docker compose -f ./srcs/docker-compose.yml up -d
 
 down:
-	sudo docker-compose -f  ./srcs/docker-compose.yml down
+	sudo docker compose -f  ./srcs/docker-compose.yml down
 
 clean:
-	sudo docker-compose -f ./srcs/docker-compose.yml down --rmi all -v
+	sudo docker compose -f ./srcs/docker-compose.yml down --rmi all -v
 
 fclean: clean
 	@if [ -d "/home/lbroms/data" ]; then \
