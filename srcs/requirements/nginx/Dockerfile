@@ -8,8 +8,8 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
        -keyout /etc/nginx/ssl/lbroms.key \
        -subj "/C=FI/ST=Helsinki/L=Helsinki/O=Hive/OU=lbroms/CN=lbroms/"
 
-COPY ./conf/default.conf /etc/nginx/sites-available/default.conf
-COPY ./conf/default.conf /etc/nginx/sites-enabled/default.conf
+COPY ./conf/default /etc/nginx/sites-available/default
+COPY ./conf/default /etc/nginx/sites-enabled/default
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 

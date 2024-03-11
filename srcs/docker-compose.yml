@@ -6,6 +6,8 @@ services:
     build: ./requirements/nginx/
     depends_on:
       - mariadb
+    volumes:
+      - wordpress_data:/var/www/html
     ports:
       - "80:80"
       - "443:443"
